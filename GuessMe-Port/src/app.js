@@ -2,8 +2,8 @@ import express from 'express';
 // import socket from 'socket.io';
 import cookieParser from 'cookie-parser';
 import cookie from 'cookie';
-import router from './router.js';
-import globalData from '../overAllData.js'
+import router from './api/router.js';
+import globalData from './api/overAllData.js'
 
 global.IO = require('socket.io')(server);
 
@@ -41,6 +41,28 @@ global.IO.on('connnection', (socket) => {
       }
     });
   }else{
-    
+    let token = cook .parese(socket.request.headers.cookie).token;
+    let room = globalData.ROOMS[token];
+
+    // 用户连接
+    console.log('Add connnect pool:' + token);
+    room.connectPool.push(socket);
+    // 发送历史数据
+    if(room.historyData.length !== 0){
+      room.historyData.forEach((data) => {
+        socket.emit('message', data);
+      });
+    }
+
+    socket.on('checkmsg', (data) => {
+      let tokenData = data.token.split('=')[1];
+      let connnectHost = globalData.ROOMS[tokenData].connectPool[0];
+
+      connnectHost.emit('checkmsg', data.msg);
+
+      for(let link of globalData.ROOMS[tokenData].connectPool.slice(1)){
+        link.emit('checkmsg', data.msg);
+      }
+    });
   }
-})
+});

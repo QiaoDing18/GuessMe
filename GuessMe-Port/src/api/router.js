@@ -1,7 +1,8 @@
 import express from 'express';
-import create from './api/token.js';
-import connect from './api/webSocket.js';
-import getRooms from './api/getRooms.js';
+import create from './token.js';
+import subject from './subject.js';
+import connect from './webSocket.js';
+import getRooms from './getRooms.js';
 
 let router = express.Router();
 
