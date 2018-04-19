@@ -2,7 +2,7 @@
   "name": "guess",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "build/app.js",
   "scripts": {
     "start": "nodemon build/app.js --exec babel-node",
     "build": "babel src -d build",
