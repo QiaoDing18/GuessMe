@@ -14,8 +14,6 @@ var _token2 = _interopRequireDefault(_token);
 
 var _subject = require('./subject.js');
 
-var _subject2 = _interopRequireDefault(_subject);
-
 var _webSocket = require('./webSocket.js');
 
 var _webSocket2 = _interopRequireDefault(_webSocket);
@@ -38,12 +36,12 @@ router.get('/webSocket/connect/:token', _webSocket2.default);
 router.get('/webSocket/getRooms', _getRooms2.default);
 
 // 设置答案，提示词
-router.get('/subject/set/:id', _subject2.default.setData);
+router.get('/subject/set/:id', _subject.setData);
 
 // 玩家获取提示词
-router.get('/subject/get/:id', _subject2.default.getData);
+router.get('/subject/get/:id', _subject.getData);
 
 // 检查答案
-router.get('/subject/check/:answer/:id', checkData);
+router.get('/subject/check/:answer/:id', _subject.checkData);
 
 exports.default = router;

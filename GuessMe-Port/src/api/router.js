@@ -1,6 +1,6 @@
 import express from 'express';
 import create from './token.js';
-import subject from './subject.js';
+import {setData, getData, checkData} from './subject.js';
 import connect from './webSocket.js';
 import getRooms from './getRooms.js';
 
