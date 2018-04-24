@@ -1,0 +1,78 @@
+.container{
+  width: 100%;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 5rem;
+  background: url('../img/backpic.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.header-title{
+  width: 100%;
+  height: 2rem;
+  color: #456;
+  background-color: rgba(254, 254, 254, .9);
+}
+.header-title p{
+  text-align: center;
+  line-height: 2rem;
+  font-weight: 500;
+  font-family: "黑体";
+}
+
+.header button{
+  width: 4rem;
+  height: 1rem;
+  font-size: .38rem;
+  background-color: rgba(250, 250, 250, .98);
+  border: solid .05rem #57799C;
+  border-radius: .3rem;
+  font-family: "黑体";
+}
+.header button:active{
+  background-color: rgba(50, 50, 50, .3);
+  color: white;
+}
+
+.room{
+  display: flex;
+  justify-content: center;
+}
+.room-list{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.room-ele{
+  display: flex;
+  width: 8rem;
+  height: 1.5rem;
+  margin-top: .5rem;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: .3rem;
+  border: solid #614C41;
+  border-width: .05rem;
+  box-shadow: 3px 3px 3px #666;
+}
+.room-ele:active{
+  box-shadow: 1px 1px 1px #666;
+}
+.room-ele-logo{
+  display: flex;
+  align-items: center;
+}
+.room-ele-title{
+  display: flex;
+  align-items: center;
+  font-size: .5rem;
+}
+.room-ele-lock img{
+  width: .6rem;
+}

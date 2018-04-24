@@ -1,16 +1,16 @@
 import express from 'express';
-// import socket from 'socket.io';
+import socket from 'socket.io';
 import cookieParser from 'cookie-parser';
 import cookie from 'cookie';
 import router from './api/router.js';
 import globalData from './api/overAllData.js'
 
-global.IO = require('socket.io')(server);
-
-let app = express();
-let server = app.listen(8868, () => {
+const app = express();
+const server = app.listen(8868, () => {
   console.log("Start at 8868");
 });
+
+global.IO = require('socket.io')(server);
 
 app.use(cookieParser());
 app.use((req, res, next) => {
@@ -24,6 +24,7 @@ app.use((req, res, next) => {
 app.use('/', router);
 global.IO.on('connnection', (socket) => {
   // 接收socket的token
+  console.log(socket);
   let token = cookie.parese(socket.request.headers.cookie).token;
   if(globalData.TOKENS.indexOf(token) !== -1){
     let room = globalData.ROOMS[token];

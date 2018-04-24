@@ -7,8 +7,9 @@
   export default {
     data () {
       return {
-       pw:null,
-    }},
+        pw:null,
+      }
+    },
     props:{
       'width':{},
       'height':{},

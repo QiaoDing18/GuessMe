@@ -4,6 +4,10 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
+var _socket = require('socket.io');
+
+var _socket2 = _interopRequireDefault(_socket);
+
 var _cookieParser = require('cookie-parser');
 
 var _cookieParser2 = _interopRequireDefault(_cookieParser);
@@ -22,13 +26,12 @@ var _overAllData2 = _interopRequireDefault(_overAllData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import socket from 'socket.io';
-global.IO = require('socket.io')(server);
-
 var app = (0, _express2.default)();
 var server = app.listen(8868, function () {
   console.log("Start at 8868");
 });
+
+global.IO = require('socket.io')(server);
 
 app.use((0, _cookieParser2.default)());
 app.use(function (req, res, next) {
@@ -42,6 +45,7 @@ app.use(function (req, res, next) {
 app.use('/', _router2.default);
 global.IO.on('connnection', function (socket) {
   // 接收socket的token
+  console.log(socket);
   var token = _cookie2.default.parese(socket.request.headers.cookie).token;
   if (_overAllData2.default.TOKENS.indexOf(token) !== -1) {
     var room = _overAllData2.default.ROOMS[token];

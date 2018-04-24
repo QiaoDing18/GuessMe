@@ -5,9 +5,11 @@
 <script>
   import PaperReader from './paper_reader';
   export default {
-    data(){return {
-      pr:null,
-    }},
+    data(){
+      return {
+        pr:null,
+      }
+    },
     props:{
       'width':{},
       'height':{},

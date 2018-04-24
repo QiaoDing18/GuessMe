@@ -1,0 +1,89 @@
+.container{
+  width: 100%;
+}
+
+.header{
+  width: 100%;
+  background-color: #A7A0A0;
+}
+.header-title{
+  width: .6rem;
+  height: .6rem;
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  margin-left: .3rem;
+  margin-top: .4rem;
+  background-image: url('../img/back.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.colorr{color: #FF9500;}
+.header-state{
+  position: absolute;
+  display: inline-block;
+  color: #FACB08;
+  font-size: .5rem;
+  left: 50%;
+  top: .5rem;
+  transform: translate(-50%, 0);
+}
+
+.nav{
+  width: 100%;
+  text-align: center;
+}
+.hostSub span{
+  font-size: .55rem;
+  color: red;
+  font-weight: bold;  
+}
+.host-bar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.host-bar input{
+  width: 70%;
+  height: 1.1rem;
+  text-indent: .4rem;
+  font-size: .5rem;
+  border: 1px solid #E3CBA5;
+}
+.host-bar button{
+  width: 30%;
+  font-size: .5rem;
+  background-color: #FFE79B;
+  border: solid 1px 1px 1px 0 #A3A3A3;
+}
+.owner-ans{
+  font-size: .6rem;
+}
+.paint{
+}
+.paint-tool{
+  position: absolute;
+  width: .15rem;
+  top: 2.5rem;
+  right: 1.3rem;
+}
+.paint-tool ul li{
+  width: 1rem;
+  float: left;
+}
+#paint-big{
+  width: 1.3rem;
+  right: 0.2rem;
+}
+.paint-li{
+  position: relative;
+  top: 0.5rem;
+  width: 1rem;
+}
+.slider-vertical{
+  position: relative;
+  margin-left: -1.2rem;
+  top: -0.5rem;
+  width: 1.6rem;
+  transform: rotate(90deg);
+}

@@ -7,6 +7,8 @@ const state = {
   token: ''
 };
 
+Vue.use(Vuex)
+
 const mutations = {
   [type.CHANGE_ID] (state, newValue){
     state.id = newValue;
@@ -15,6 +17,8 @@ const mutations = {
     state.token = newValue;
   }
 };
+
+
 
 export default new Vuex.Store({
   state,

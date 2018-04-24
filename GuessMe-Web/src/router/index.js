@@ -16,7 +16,7 @@ export default new Router({
       component: indexPage
     },
     {
-      path: 'show-page',
+      path: '/show-page',
       component: showPage
     }
   ]
